@@ -1,13 +1,12 @@
+import "./App.css";
 
-import './App.css';
-import ShowUser from './Components/showuser';
+import User from "./Components/User";
 
 function App() {
-
-  
+  console.log("inside app");
   return (
     <>
-    <ShowUser />
+      <User />
     </>
   );
 }

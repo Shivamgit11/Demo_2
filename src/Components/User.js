@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ShowUser from "./showuser";
+import ShowUser from "./Showuser";
+
 
 const User = () => {
-    console.log("inside User")
+  console.log("inside User");
   const [data, setData] = useState([]);
 
   const getdata = () => {
@@ -13,7 +14,6 @@ const User = () => {
       },
     })
       .then((response) => {
-        
         return response.json();
       })
       .then((myjson) => {
@@ -32,21 +32,19 @@ const User = () => {
   return (
     <section>
       <ul>
-        {data &&
-          data.length > 0 &&
-          data.map((val) => {
-            return (
-              <ShowUser
-                key={Math.random()}
-                id={val.id}
-                name={val.name}
-                city={val.address.city}
-                street={val.address.street}
-                email={val.email}
-                phone={val.phone}
-              />
-            );
-          })}
+        {data.map((val) => {
+          return (
+            <ShowUser
+              key={Math.random()}
+              id={val.id}
+              name={val.name}
+              city={val.address.city}
+              street={val.address.street}
+              email={val.email}
+              phone={val.phone}
+            />
+          );
+        })}
       </ul>
     </section>
   );
