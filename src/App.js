@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import User from './Components/User';
 
 function App() {
+  const REgUser = fetch('https://jsonplaceholder.typicode.com/users' , {
+    method: "Get",
+  });
+  console.log(REgUser);
   return (
     <>
-    <h1>Welcome to domo project</h1>
+    <User />
     </>
   );
 }
